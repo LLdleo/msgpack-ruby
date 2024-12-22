@@ -24,7 +24,10 @@
 
 RUBY_FUNC_EXPORTED void Init_msgpack(void)
 {
-    VALUE mMessagePack = rb_define_module("MessagePack");
+    // 定义外层模块 AkeAke
+    VALUE mAkeAke = rb_define_module("AkeAke");
+    // 在 AkeAke 模块下定义内层模块 MessagePack
+    VALUE mMessagePack = rb_define_module_under(mAkeAke, "MessagePack");
 
     MessagePack_Buffer_module_init(mMessagePack);
     MessagePack_Packer_module_init(mMessagePack);
