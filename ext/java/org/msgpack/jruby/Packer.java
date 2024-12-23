@@ -25,7 +25,7 @@ import org.jcodings.Encoding;
 
 import static org.jruby.runtime.Visibility.PRIVATE;
 
-@JRubyClass(name="MessagePack::Packer")
+@JRubyClass(name="AkeAke::MessagePack::Packer")
 public class Packer extends RubyObject {
   private static final long serialVersionUID = 8451274621499362492L;
   public transient ExtensionRegistry registry;
@@ -71,14 +71,14 @@ public class Packer extends RubyObject {
         this.registry = new ExtensionRegistry();
     }
     this.encoder = new Encoder(runtime, this, compatibilityMode, registry, hasSymbolExtType, hasBigintExtType);
-    this.buffer = new Buffer(runtime, runtime.getModule("MessagePack").getClass("Buffer"));
+    this.buffer = new Buffer(runtime, runtime.getModule("AkeAke::MessagePack").getClass("Buffer"));
     this.buffer.initialize(ctx, args);
     this.binaryEncoding = runtime.getEncodingService().getAscii8bitEncoding();
     return this;
   }
 
   public static Packer newPacker(ThreadContext ctx, ExtensionRegistry extRegistry, boolean hasSymbolExtType, boolean hasBigintExtType, IRubyObject[] args) {
-    Packer packer = new Packer(ctx.runtime, ctx.runtime.getModule("MessagePack").getClass("Packer"), extRegistry, hasSymbolExtType, hasBigintExtType);
+    Packer packer = new Packer(ctx.runtime, ctx.runtime.getModule("AkeAke::MessagePack").getClass("Packer"), extRegistry, hasSymbolExtType, hasBigintExtType);
     packer.initialize(ctx, args);
     return packer;
   }
@@ -95,7 +95,7 @@ public class Packer extends RubyObject {
 
   @JRubyMethod(name = "register_type_internal", required = 3, visibility = PRIVATE)
   public IRubyObject registerType(ThreadContext ctx, IRubyObject type, IRubyObject mod, IRubyObject proc) {
-    testFrozen("MessagePack::Packer");
+    testFrozen("AkeAke::MessagePack::Packer");
 
     Ruby runtime = ctx.runtime;
 

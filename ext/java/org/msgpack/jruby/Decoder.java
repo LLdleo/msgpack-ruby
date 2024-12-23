@@ -74,12 +74,12 @@ public class Decoder implements Iterator<IRubyObject> {
     this.allowUnknownExt = allowUnknownExt;
     this.binaryEncoding = runtime.getEncodingService().getAscii8bitEncoding();
     this.utf8Encoding = UTF8Encoding.INSTANCE;
-    this.unpackErrorClass = runtime.getModule("MessagePack").getClass("UnpackError");
-    this.underflowErrorClass = runtime.getModule("MessagePack").getClass("UnderflowError");
-    this.malformedFormatErrorClass = runtime.getModule("MessagePack").getClass("MalformedFormatError");
-    this.stackErrorClass = runtime.getModule("MessagePack").getClass("StackError");
-    this.unexpectedTypeErrorClass = runtime.getModule("MessagePack").getClass("UnexpectedTypeError");
-    this.unknownExtTypeErrorClass = runtime.getModule("MessagePack").getClass("UnknownExtTypeError");
+    this.unpackErrorClass = runtime.getModule("AkeAke::MessagePack").getClass("UnpackError");
+    this.underflowErrorClass = runtime.getModule("AkeAke::MessagePack").getClass("UnderflowError");
+    this.malformedFormatErrorClass = runtime.getModule("AkeAke::MessagePack").getClass("MalformedFormatError");
+    this.stackErrorClass = runtime.getModule("AkeAke::MessagePack").getClass("StackError");
+    this.unexpectedTypeErrorClass = runtime.getModule("AkeAke::MessagePack").getClass("UnexpectedTypeError");
+    this.unknownExtTypeErrorClass = runtime.getModule("AkeAke::MessagePack").getClass("UnknownExtTypeError");
     this.symbolizeKeys = symbolizeKeys;
     this.allowUnknownExt = allowUnknownExt;
     feed(bytes, offset, length);

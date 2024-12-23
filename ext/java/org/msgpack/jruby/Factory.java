@@ -23,7 +23,7 @@ import org.jruby.util.ByteList;
 
 import static org.jruby.runtime.Visibility.PRIVATE;
 
-@JRubyClass(name="MessagePack::Factory")
+@JRubyClass(name="AkeAke::MessagePack::Factory")
 public class Factory extends RubyObject {
   private static final long serialVersionUID = 8441284623445322492L;
   private transient final Ruby runtime;
@@ -82,7 +82,7 @@ public class Factory extends RubyObject {
 
   @JRubyMethod(name = "register_type_internal", required = 3, visibility = PRIVATE)
   public IRubyObject registerTypeInternal(ThreadContext ctx, IRubyObject type, IRubyObject mod, IRubyObject opts) {
-    testFrozen("MessagePack::Factory");
+    testFrozen("AkeAke::MessagePack::Factory");
 
     Ruby runtime = ctx.runtime;
     RubyHash options = (RubyHash) opts;

@@ -23,7 +23,7 @@ import org.jcodings.Encoding;
 import static org.msgpack.jruby.Types.*;
 
 
-@JRubyClass(name="MessagePack::ExtensionValue")
+@JRubyClass(name="AkeAke::MessagePack::ExtensionValue")
 public class ExtensionValue extends RubyObject {
   private static final long serialVersionUID = 8451274621449322492L;
   private transient final Encoding binaryEncoding;
@@ -43,7 +43,7 @@ public class ExtensionValue extends RubyObject {
   }
 
   public static ExtensionValue newExtensionValue(Ruby runtime, int type, byte[] payload) {
-    ExtensionValue v = new ExtensionValue(runtime, runtime.getModule("MessagePack").getClass("ExtensionValue"));
+    ExtensionValue v = new ExtensionValue(runtime, runtime.getModule("AkeAke::MessagePack").getClass("ExtensionValue"));
     ByteList byteList = new ByteList(payload, runtime.getEncodingService().getAscii8bitEncoding());
     v.initialize(runtime.getCurrentContext(), runtime.newFixnum(type), runtime.newString(byteList));
     return v;
@@ -60,7 +60,7 @@ public class ExtensionValue extends RubyObject {
   @Override
   public IRubyObject to_s() {
     IRubyObject payloadStr = payload.callMethod(getRuntime().getCurrentContext(), "inspect");
-    return getRuntime().newString(String.format("#<MessagePack::ExtensionValue @type=%d, @payload=%s>", type.getLongValue(), payloadStr));
+    return getRuntime().newString(String.format("#<AkeAke::MessagePack::ExtensionValue @type=%d, @payload=%s>", type.getLongValue(), payloadStr));
   }
 
   @JRubyMethod(name = "hash")

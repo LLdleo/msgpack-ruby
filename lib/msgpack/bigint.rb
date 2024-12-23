@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+module AkeAke
 module MessagePack
   module Bigint
     # We split the bigint in 32bits chunks so that individual part fits into
@@ -66,4 +67,5 @@ module MessagePack
       sign == 0 ? sum : -sum
     end
   end
+end
 end

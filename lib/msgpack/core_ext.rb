@@ -1,3 +1,4 @@
+module AkeAke
 module MessagePack
   module CoreExt
     def to_msgpack(packer_or_io = nil)
@@ -12,6 +13,7 @@ module MessagePack
       end
     end
   end
+end
 end
 
 class NilClass
@@ -126,6 +128,7 @@ else
   end
 end
 
+module
 module MessagePack
   class ExtensionValue
     include CoreExt
@@ -136,4 +139,5 @@ module MessagePack
       packer
     end
   end
+end
 end

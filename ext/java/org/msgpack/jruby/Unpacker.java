@@ -24,7 +24,7 @@ import org.jruby.util.ByteList;
 
 import static org.jruby.runtime.Visibility.PRIVATE;
 
-@JRubyClass(name="MessagePack::Unpacker")
+@JRubyClass(name="AkeAke::MessagePack::Unpacker")
 public class Unpacker extends RubyObject {
   private static final long serialVersionUID = 8451264671199362492L;
   private transient final ExtensionRegistry registry;
@@ -44,7 +44,7 @@ public class Unpacker extends RubyObject {
   public Unpacker(Ruby runtime, RubyClass type, ExtensionRegistry registry) {
     super(runtime, type);
     this.registry = registry;
-    this.underflowErrorClass = runtime.getModule("MessagePack").getClass("UnderflowError");
+    this.underflowErrorClass = runtime.getModule("AkeAke::MessagePack").getClass("UnderflowError");
   }
 
   static class UnpackerAllocator implements ObjectAllocator {
@@ -101,7 +101,7 @@ public class Unpacker extends RubyObject {
   }
 
   public static Unpacker newUnpacker(ThreadContext ctx, ExtensionRegistry extRegistry, IRubyObject[] args) {
-    Unpacker unpacker = new Unpacker(ctx.runtime, ctx.runtime.getModule("MessagePack").getClass("Unpacker"), extRegistry);
+    Unpacker unpacker = new Unpacker(ctx.runtime, ctx.runtime.getModule("AkeAke::MessagePack").getClass("Unpacker"), extRegistry);
     unpacker.initialize(ctx, args);
     return unpacker;
   }
@@ -128,7 +128,7 @@ public class Unpacker extends RubyObject {
 
   @JRubyMethod(name = "register_type_internal", required = 3, visibility = PRIVATE)
   public IRubyObject registerTypeInternal(ThreadContext ctx, IRubyObject type, IRubyObject mod, IRubyObject proc) {
-    testFrozen("MessagePack::Unpacker");
+    testFrozen("AkeAke::MessagePack::Unpacker");
 
     Ruby runtime = ctx.runtime;
 

@@ -1,3 +1,4 @@
+module AkeAke
 module MessagePack
   class Unpacker
     # see ext for other methods
@@ -38,4 +39,5 @@ module MessagePack
       end
     end
   end
+end
 end

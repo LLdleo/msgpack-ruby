@@ -1,3 +1,4 @@
+module AkeAke
 module MessagePack
   class Buffer
     # see ext for other methods
@@ -6,4 +7,5 @@ module MessagePack
     undef_method :dup
     undef_method :clone
   end
+end
 end

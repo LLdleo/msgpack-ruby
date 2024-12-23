@@ -16,6 +16,7 @@ require "msgpack/core_ext"
 require "msgpack/timestamp"
 require "msgpack/time"
 
+module AkeAke
 module MessagePack
   DefaultFactory = MessagePack::Factory.new
 
@@ -45,4 +46,5 @@ module MessagePack
 
   module_function :pack
   module_function :dump
+end
 end

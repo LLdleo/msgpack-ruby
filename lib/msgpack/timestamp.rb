@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+module AkeAke
 module MessagePack
   class Timestamp # a.k.a. "TimeSpec"
     # Because the byte-order of MessagePack is big-endian in,
@@ -73,4 +74,5 @@ module MessagePack
       other.class == self.class && sec == other.sec && nsec == other.nsec
     end
   end
+end
 end

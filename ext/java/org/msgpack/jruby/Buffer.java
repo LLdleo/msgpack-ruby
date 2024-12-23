@@ -19,7 +19,7 @@ import org.jruby.util.ByteList;
 import org.jcodings.Encoding;
 
 
-@JRubyClass(name="MessagePack::Buffer")
+@JRubyClass(name="AkeAke::MessagePack::Buffer")
 public class Buffer extends RubyObject {
   private static final long serialVersionUID = 8441244627425629412L;
   private transient IRubyObject io;

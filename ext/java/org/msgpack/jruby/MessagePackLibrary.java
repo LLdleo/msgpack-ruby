@@ -21,7 +21,7 @@ import org.jruby.internal.runtime.methods.DynamicMethod;
 
 public class MessagePackLibrary implements Library {
   public void load(Ruby runtime, boolean wrap) {
-    RubyModule msgpackModule = runtime.defineModule("MessagePack");
+    RubyModule msgpackModule = runtime.defineModule("AkeAke::MessagePack");
     RubyClass standardErrorClass = runtime.getStandardError();
     RubyClass unpackErrorClass = msgpackModule.defineClassUnder("UnpackError", standardErrorClass, standardErrorClass.getAllocator());
     RubyClass underflowErrorClass = msgpackModule.defineClassUnder("UnderflowError", unpackErrorClass, unpackErrorClass.getAllocator());
